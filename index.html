@@ -137,14 +137,32 @@
               >"page not found" support guide</a
             >
             for troubleshooting tips.
-          </p>
-          <p style="color: var(--colorTextMuted);">
-            Netlify Internal ID:
-            <span class="inline-code request-id"><code>01HDJ1256ZXRCZYPZ6873E65SR</code></span>
-          </p>
-        </div>
-      </div>
-    </div>
+<p>
+  <p style="color: var(--colorTextMuted);">
+    Netlify Internal ID:
+    <span class="inline-code request-id" id="random-code"><code></code></span>
+  </p>
+</p>
+
+<script>
+  // Function to generate a random alphanumeric code
+  function generateRandomCode(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      code += characters.charAt(randomIndex);
+    }
+    return code;
+  }
+
+  // Get the code element
+  const codeElement = document.getElementById('random-code');
+
+  // Set the generated random code
+  codeElement.querySelector('code').textContent = generateRandomCode(26);
+</script>
+
     <script>
       (function () {
         if (
